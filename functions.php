@@ -95,3 +95,7 @@ by chosen font(s), translate this to 'off'. Do not translate into your own langu
 
     return $font_url;
 }
+
+function harry_header() {
+    get_template_part('template-parts/header/header1');
+}

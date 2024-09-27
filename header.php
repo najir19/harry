@@ -2,7 +2,8 @@
 <html <?php language_attributes()?>>
    <head>
       <meta charset="<?php bloginfo('charset');?>">
-      <?php if (is_singular() && pings_open( get_queried_object())):?>
+      <?php
+if (is_singular() && pings_open(get_queried_object())): ?>
       <?php endif;?>
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       <meta name="description" content="">
@@ -40,6 +41,8 @@
                   <p class="preloader__loading">Loading</p>
                </div>
             </div>
-         </div>  
+         </div>
       </div>
       <!-- pre loader area end -->
+
+      <?php harry_header();?>
