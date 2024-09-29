@@ -34,5 +34,8 @@ function harry_header() {
 function harry_preloader() {
     get_template_part('template-parts/header/preloader');
 }
+
 // call enque
 include_once 'inc/common/scripts.php';
+include_once 'inc/harry-kirki.php';
+include_once 'inc/template-function.php';
