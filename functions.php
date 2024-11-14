@@ -23,6 +23,14 @@ function harry_theme_setup() {
     /** refresh widgest **/
     add_theme_support('customize-selective-refresh-widgets');
 
+    // MENU REGISTER
+    register_nav_menus(
+        array(
+            'main-menu' => __('Main Menu', 'harry'),
+            'footer-menu' => __('Footer Menu', 'harry'),
+        )
+    );
+
 }
 
 add_action('after_setup_theme', 'harry_theme_setup');
@@ -37,5 +45,8 @@ function harry_preloader() {
 
 // call enque
 include_once 'inc/common/scripts.php';
+
 include_once 'inc/harry-kirki.php';
+
 include_once 'inc/template-function.php';
+include_once 'inc/nav-walker.php';

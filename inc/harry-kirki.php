@@ -69,5 +69,14 @@ function harry_logo_section() {
             'default' => get_template_directory_uri() . '/assets/img/logo/logo-black.svg',
         ]
     );
+    new \Kirki\Field\Image(
+        [
+            'settings' => 'harry_search_logo',
+            'label' => esc_html__('Search Logo', 'harry'),
+            'description' => esc_html__('Please Upload Your Logo', 'harry'),
+            'section' => 'harry_logo',
+            'default' => get_template_directory_uri() . '/assets/img/logo/logo.svg',
+        ]
+    );
 }
 harry_logo_section();
