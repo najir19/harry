@@ -27,6 +27,7 @@ function harry_theme_setup() {
     register_nav_menus(
         array(
             'main-menu' => __('Main Menu', 'harry'),
+            'sidebar-menu' => __('Sidebar Menu', 'harry'),
             'footer-menu' => __('Footer Menu', 'harry'),
         )
     );
@@ -46,7 +47,9 @@ function harry_preloader() {
 // call enque
 include_once 'inc/common/scripts.php';
 
-include_once 'inc/harry-kirki.php';
+if (class_exists('Kirki')) {
+    include_once 'inc/harry-kirki.php';
+}
 
 include_once 'inc/template-function.php';
 include_once 'inc/nav-walker.php';
