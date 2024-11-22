@@ -1,6 +1,19 @@
 <?php
 function harry_header() {
-    get_template_part('template-parts/header/header1');
+    $harry_header_deafult = get_theme_mod('harry_deafault_header_select_setting', 'header-style-1');
+
+    if ($harry_header_deafult == 'header-style-1') {
+        get_template_part('template-parts/header/header1');
+    } elseif ($harry_header_deafult == 'header-style-2') {
+        get_template_part('template-parts/header/header2');
+    } elseif ($harry_header_deafult == 'header-style-3') {
+        get_template_part('template-parts/header/header3');
+    } elseif ($harry_header_deafult == 'header-style-4') {
+        get_template_part('template-parts/header/header4');
+    } elseif ($harry_header_deafult == 'header-style-5') {
+        get_template_part('template-parts/header/header5');
+    }
+
 }
 
 // harry main logo

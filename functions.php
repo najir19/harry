@@ -36,10 +36,6 @@ function harry_theme_setup() {
 
 add_action('after_setup_theme', 'harry_theme_setup');
 
-function harry_header() {
-    get_template_part('template-parts/header/header1');
-}
-
 function harry_preloader() {
     get_template_part('template-parts/header/preloader');
 }
