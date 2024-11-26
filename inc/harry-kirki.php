@@ -9,7 +9,8 @@ new \Kirki\Panel(
 );
 
 // harry header info
-function harry_header_info() {
+function harry_header_info()
+{
     new \Kirki\Section(
         'harry_header_info',
         [
@@ -66,8 +67,38 @@ function harry_header_info() {
 }
 harry_header_info();
 
+
+
+// harry footer info
+function harry_footer_info()
+{
+    new \Kirki\Section(
+        'harry_footer_info',
+        [
+            'title' => esc_html__('Footer ', 'harry'),
+            'description' => esc_html__('Harry Footer Info', 'harry'),
+            'panel' => 'harry_panel',
+            'priority' => 160,
+        ]
+    );
+
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'harry_footer_copyright',
+            'label' => esc_html__('Copyright Text', 'harry'),
+            'section' => 'harry_footer_info',
+            'default' => esc_html__('© 2022 Harry All Rights Reserved.', 'harry'),
+            'priority' => 10,
+        ]
+    );
+}
+harry_footer_info();
+
+
+
 // harry side bar info
-function harry_sidebar_info() {
+function harry_sidebar_info()
+{
     new \Kirki\Section(
         'harry_sidebar_info',
         [
@@ -171,7 +202,8 @@ function harry_sidebar_info() {
 harry_sidebar_info();
 
 // harry logo section
-function harry_logo_section() {
+function harry_logo_section()
+{
     new \Kirki\Section(
         'harry_logo',
         [
@@ -215,7 +247,8 @@ function harry_logo_section() {
 harry_logo_section();
 
 // harry social section
-function harry_social_section() {
+function harry_social_section()
+{
     new \Kirki\Section(
         'harry_social_section',
         [

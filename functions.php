@@ -31,11 +31,54 @@ function harry_theme_setup() {
             'footer-menu' => __('Footer Menu', 'harry'),
         )
     );
+    remove_theme_support('widgets-block-editor');
 
 }
 
 add_action('after_setup_theme', 'harry_theme_setup');
 
+function harry_widgets() {
+    register_sidebar(array(
+        'name' => __('Footer One', 'harry'),
+        'id' => 'footer-1',
+        'description' => __('Widgets in this area will be shown on Footer', 'harry'),
+        'before_widget' => '<div id="%1$s" class="footer__widget mb-50 footer-col-1 %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="footer__widget-title">',
+        'after_title' => '</h3>',
+    ));
+    register_sidebar(array(
+        'name' => __('Footer Two', 'harry'),
+        'id' => 'footer-2',
+        'description' => __('Widgets in this area will be shown on Footer', 'harry'),
+        'before_widget' => '<div id="%1$s" class="footer__widget mb-50 footer-col-2 %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="footer__widget-title">',
+        'after_title' => '</h3>',
+    ));
+    register_sidebar(array(
+        'name' => __('Footer Three', 'harry'),
+        'id' => 'footer-3',
+        'description' => __('Widgets in this area will be shown on Footer', 'harry'),
+        'before_widget' => '<div id="%1$s" class="footer__widget mb-50 footer-col-3 %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="footer__widget-title">',
+        'after_title' => '</h3>',
+    ));
+    register_sidebar(array(
+        'name' => __('Footer Four', 'harry'),
+        'id' => 'footer-4',
+        'description' => __('Widgets in this area will be shown on Footer', 'harry'),
+        'before_widget' => '<div id="%1$s" class="footer__widget mb-50 footer-col-4 %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="footer__widget-title">',
+        'after_title' => '</h3>',
+    ));
+}
+
+add_action('widgets_init', 'harry_widgets');
+
+// nessary files
 function harry_preloader() {
     get_template_part('template-parts/header/preloader');
 }
@@ -43,6 +86,7 @@ function harry_preloader() {
 // call enque
 include_once 'inc/common/scripts.php';
 
+// CALL PLUGIN
 if (class_exists('Kirki')) {
     include_once 'inc/harry-kirki.php';
 }
