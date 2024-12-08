@@ -3,7 +3,8 @@
 /**
  * Essential harry theme supports
  * */
-function harry_theme_setup() {
+function harry_theme_setup()
+{
     /** automatic feed link*/
     add_theme_support('automatic-feed-links');
 
@@ -32,12 +33,12 @@ function harry_theme_setup() {
         )
     );
     remove_theme_support('widgets-block-editor');
-
 }
 
 add_action('after_setup_theme', 'harry_theme_setup');
 
-function harry_widgets() {
+function harry_widgets()
+{
     register_sidebar(array(
         'name' => __('Footer One', 'harry'),
         'id' => 'footer-1',
@@ -79,7 +80,8 @@ function harry_widgets() {
 add_action('widgets_init', 'harry_widgets');
 
 // nessary files
-function harry_preloader() {
+function harry_preloader()
+{
     get_template_part('template-parts/header/preloader');
 }
 
@@ -92,4 +94,5 @@ if (class_exists('Kirki')) {
 }
 
 include_once 'inc/template-function.php';
+include_once 'inc/breadcrumb.php';
 include_once 'inc/nav-walker.php';

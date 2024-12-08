@@ -94,6 +94,30 @@ function harry_footer_info()
 }
 harry_footer_info();
 
+// harry breadcrumb bg section 
+function harry_breadcrumb_section()
+{
+    new \Kirki\Section(
+        'harry_blog_option',
+        [
+            'title' => esc_html__('Blog ', 'harry'),
+            'description' => esc_html__('Blog section', 'harry'),
+            'panel' => 'harry_panel',
+            'priority' => 160,
+        ]
+    );
+
+    new \Kirki\Field\Image(
+        [
+            'settings' => 'harry_breadcrumb_bg',
+            'label' => esc_html__('Breadcrumb BG', 'harry'),
+            'description' => esc_html__('Please Change or Upload Your Breadcrumb BG', 'harry'),
+            'section' => 'harry_blog_option',
+        ]
+    );
+}
+harry_breadcrumb_section();
+
 
 
 // harry side bar info
