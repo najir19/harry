@@ -1,9 +1,17 @@
+<?php
+$format_url = get_field('URL-of-Your-Video');
+
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class('tp-format-video postbox__item format-video mb-50 transition-3'); ?>>
     <?php if (has_post_thumbnail()): ?>
-        <div class="postbox__thumb w-img">
+        <div class="postbox__thumb postbox__video w-img p-relative">
             <a href="<?php the_permalink(); ?>">
                 <?php the_post_thumbnail(); ?>
             </a>
+            <?php if (!empty($format_url)): ?>
+                <a href="<?php echo esc_url($format_url); ?>" class="play-btn pulse-btn popup-video"><i class="fas fa-play"></i></a>
+            <?php endif; ?>
         </div>
     <?php endif; ?>
     <div class="postbox__content">
@@ -16,7 +24,7 @@
             <?php the_excerpt(); ?>
         </div>
         <div class="postbox__read-more">
-            <a href="<?php the_permalink(); ?>" class="tp-btn">read more</a>
+            <a href="<?php the_permalink(); ?>" class="tp-btn"><?php echo esc_html("read more") ?></a>
         </div>
     </div>
 </article>
