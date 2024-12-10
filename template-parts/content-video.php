@@ -1,5 +1,5 @@
 <?php
-$format_url = get_field('URL-of-Your-Video');
+$format_gallery = function_exists('get_field') ? get_field('URL-of-Your-Video') : null;
 
 ?>
 

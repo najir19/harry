@@ -1,5 +1,6 @@
 <?php
-$format_audio = esc_html(get_field('blog_post_audio_f'));
+$format_gallery = function_exists('get_field') ? get_field('blog_post_audio_f') : null;
+
 
 ?>
 
